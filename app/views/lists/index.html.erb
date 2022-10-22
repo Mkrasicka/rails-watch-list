@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <div>
+      <h1>All lists</h1>
+       <%= link_to "Add a new list", new_list_path, class: 'btn btn-primary' %>
+    </div>
+      <ul class="list-group mb-3">
+        <% @lists.each do |list| %>
+          <li class="list-group-item">
+            <%= link_to list.name, list_path(list) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  MOVIES
+</div>
