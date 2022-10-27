@@ -1,21 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-    <div>
-      <h1>All lists</h1>
-       <%= link_to "Add a new list", new_list_path, class: 'btn btn-primary' %>
-    </div>
-      <ul class="list-group mb-3">
-        <% @lists.each do |list| %>
-          <li class="list-group-item">
-            <%= link_to list.name, list_path(list) %>
-          </li>
-        <% end %>
-      </ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_1280.png);">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h1><strong>Save any kind of movies</strong></h1>
+      </div>
     </div>
   </div>
 </div>
-
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  MOVIES
+<div>
+  <h1>My lists</h1>
+  <div class="cards">
+    <% @lists.each do |list| %>
+    <% style = %{ background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("") } %>
+      <div class="card-category" style="<%= style %>">
+       <%= link_to list.name, list_path(list), class: "link" %>
+      </div>
+    <% end %>
+  </div>
 </div>
