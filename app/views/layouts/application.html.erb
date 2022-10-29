@@ -13,10 +13,10 @@
 
   <body>
     <%# <%= render 'shared/navbar' %>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" data-controller="navbar">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="https://styles.redditmedia.com/t5_2sqpa/styles/communityIcon_69xvdulqm0p61.png?width=256&s=0751977b9b29b226274405331736c76ada37f5f8" />
+        <a class="navbar-brand" href="">
+        <%= cl_image_tag("s3hhkvt4wmedhfj53edf") %>
         </a>
         <button class="navbar-toggler btn btn-ghost"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -26,6 +26,9 @@
           <ul class="navbar-nav me-auto">
               <li class="nav-item active">
                 <%= link_to "New list", new_list_path, class: 'btn btn-ghost' %>
+              </li>
+              <li class="nav-item active">
+                <%= link_to "Home", root_path, class: 'btn btn-ghost' %>
               </li>
           </ul>
         </div>

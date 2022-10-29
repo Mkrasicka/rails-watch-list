@@ -1,4 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_1280.png);">
+<div class="banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_1280.png);">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
@@ -11,9 +12,9 @@
   <h1>My lists</h1>
   <div class="cards">
     <% @lists.each do |list| %>
-    <% style = %{ background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("") } %>
-      <div class="card-category" style="<%= style %>">
-       <%= link_to list.name, list_path(list), class: "link" %>
+      <div class="card-category"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key): asset_path('banner.jpg')%>)">
+       <%= link_to list.name, list_path(list), class: "link"%>
       </div>
     <% end %>
   </div>

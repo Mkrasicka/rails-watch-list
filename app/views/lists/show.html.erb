@@ -1,10 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/03/23/17/33/curtain-1275200_1280.png);">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h1><strong><%= @list.name.capitalize %></strong></h1>
+        <p>Has <%= @list.bookmarks.size %> movies</p>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container mt-5">
   <div class="row">
     <div class="col-xs-12 col-sm-10">
       <div class="d-flex align-items-center px-3">
-        <h1 class="col-2-md mt-2 ms-2"><b><strong><%= @list.name.capitalize %>:</strong></b> <%= @list.bookmarks.size %>movies</h1>
-        <%= link_to "Add a movie", new_list_bookmark_path(@list), class: '' %>
-        <p class="flex-grow-1"></p>
+        <%= link_to "Add a movie", new_list_bookmark_path(@list), class: 'btn btn-ghost' %>
       </div>
     </div>
     <div class="row">
@@ -18,12 +26,12 @@
             <%# image tag is a short way to create an actual image %>
             <h5 class="">Rating <%= movie.rating %></h5>
             <p><% bookmark.comment %></p>
-            <%= link_to "Delete",bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: '' %>
+            <%= link_to "Delete",bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-ghost' %>
           </div>
       <% end %>
     </div>
   </div>
-<%= link_to "Back", root_path, class: "" %>
+
 
   </div>
 </div>
